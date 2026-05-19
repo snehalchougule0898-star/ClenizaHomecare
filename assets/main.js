@@ -179,7 +179,7 @@ if (checkoutVariants.length) {
     setCheckoutMessage("Creating a secure payment order. Please wait.", "success");
 
     try {
-      const order = await postJson("/api/create-order", {
+      const order = await postJson("/.netlify/functions/create-order", {
         amount: amountInPaise,
         currency: "INR",
         receipt: `cleniza_${Date.now()}`,
@@ -214,7 +214,7 @@ if (checkoutVariants.length) {
         handler: async (response) => {
           try {
             setCheckoutMessage("Payment received. Verifying securely...", "success");
-            await postJson("/api/verify-payment", response);
+            await postJson("/.netlify/functions/verify-payment", response);
             setCheckoutMessage(
               `Payment verified. Thank you, ${customer.name}. Your CLENIZA order for ${total} sachets has been received.`,
               "success"
