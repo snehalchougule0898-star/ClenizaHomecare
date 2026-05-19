@@ -723,18 +723,26 @@ h4 {
 
 .combo-pack {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 18px;
-  align-items: center;
-  margin-bottom: 18px;
-  padding: 22px;
-  border: 1px solid rgba(21, 184, 132, 0.28);
-  border-radius: 16px;
-  background: linear-gradient(135deg, #f0fff7 0%, #ffffff 100%);
-  box-shadow: 0 18px 48px rgba(6, 63, 120, 0.09);
+  grid-template-columns: minmax(0, 1fr) 190px;
+  gap: 22px;
+  align-items: stretch;
+  margin: 0 0 22px;
+  padding: 16px;
+  border: 1px solid rgba(21, 184, 132, 0.34);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(240, 255, 247, 0.98), rgba(255, 255, 255, 0.98));
+  box-shadow: 0 20px 56px rgba(6, 63, 120, 0.11);
 }
 
-.combo-pack span {
+.combo-pack-main {
+  display: grid;
+  align-content: center;
+  min-height: 170px;
+  padding: 12px 4px 12px 12px;
+}
+
+.combo-kicker {
   display: block;
   color: var(--cz-green);
   font-size: 12px;
@@ -743,25 +751,64 @@ h4 {
 }
 
 .combo-pack h3 {
-  margin-top: 6px;
+  margin-top: 8px;
   color: var(--cz-navy);
-  font-size: 24px;
+  font-size: 28px;
+  line-height: 1.08;
 }
 
 .combo-pack p {
-  margin-top: 8px;
+  max-width: 620px;
+  margin-top: 10px;
 }
 
-.combo-pack > div:last-child {
+.combo-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.combo-items span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 10px;
+  border: 1px solid rgba(6, 63, 120, 0.1);
+  border-radius: 999px;
+  color: var(--cz-navy);
+  background: #fff;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.combo-pack-action {
   display: grid;
-  gap: 10px;
-  justify-items: end;
+  align-content: center;
+  justify-items: stretch;
+  gap: 8px;
+  padding: 20px;
+  border-radius: 14px;
+  color: #fff;
+  background: linear-gradient(160deg, var(--cz-navy), var(--cz-blue));
+  text-align: center;
 }
 
 .combo-pack strong {
-  color: var(--cz-navy);
-  font-size: 28px;
+  color: #fff;
+  font-size: 34px;
   line-height: 1;
+}
+
+.combo-pack-action small {
+  color: #dff7ff;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.combo-pack-action .btn {
+  width: 100%;
+  margin-top: 8px;
 }
 
 .variant-grid {
@@ -1145,15 +1192,20 @@ h4 {
 
   .combo-pack {
     grid-template-columns: 1fr;
+    padding: 14px;
+  }
+
+  .combo-pack-main {
+    min-height: auto;
+    padding: 8px;
+  }
+
+  .combo-pack h3 {
+    font-size: 24px;
+  }
+
+  .combo-pack-action {
     padding: 18px;
-  }
-
-  .combo-pack > div:last-child {
-    justify-items: stretch;
-  }
-
-  .combo-pack .btn {
-    width: 100%;
   }
 
   .variant-card img {
