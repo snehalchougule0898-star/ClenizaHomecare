@@ -1,0 +1,10 @@
+{
+  "name": "cleniza-site",
+  "private": true,
+  "scripts": {
+    "check": "node --check assets/main.js && node --check netlify/functions/create-order.js && node --check netlify/functions/verify-payment.js"
+  },
+  "dependencies": {
+    "razorpay": "^2.9.6"
+  }
+}
